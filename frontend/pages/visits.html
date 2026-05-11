@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Visit Sessions
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-white p-4 shadow">
+
+    <h1 class="text-2xl font-bold text-brand-primary">
+
+      Visit Sessions
+
+    </h1>
+
+    <p class="text-sm text-gray-500 mt-1">
+
+      Measurement Visit Management
+
+    </p>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- CREATE FORM -->
+
+    <div class="bg-white rounded-2xl p-4 shadow space-y-4">
+
+      <!-- PROJECT -->
+
+      <select
+        id="project_id"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+        <option value="">
+
+          Select Project
+
+        </option>
+
+      </select>
+
+      <!-- VISIT NAME -->
+
+      <input
+        type="text"
+        id="visit_name"
+        placeholder="Visit Name"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <!-- DEPARTMENT -->
+
+      <input
+        type="text"
+        id="department"
+        placeholder="Department / Standard"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <!-- DIVISION -->
+
+      <input
+        type="text"
+        id="division"
+        placeholder="Division / Section"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <!-- DATE -->
+
+      <input
+        type="date"
+        id="visit_date"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <!-- LOCATION -->
+
+      <input
+        type="text"
+        id="location"
+        placeholder="Location"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <!-- TEAM -->
+
+      <input
+        type="text"
+        id="measurement_team"
+        placeholder="Measurement Team"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <!-- NOTES -->
+
+      <textarea
+        id="notes"
+        placeholder="Visit Notes"
+        class="w-full border rounded-2xl px-4 py-4"
+      ></textarea>
+
+      <!-- BUTTON -->
+
+      <button
+        onclick="createVisit()"
+        class="w-full bg-brand-primary text-white py-4 rounded-2xl font-bold"
+      >
+
+        CREATE VISIT
+
+      </button>
+
+    </div>
+
+    <!-- VISIT LIST -->
+
+    <div
+      id="visitList"
+      class="space-y-4"
+    >
+    </div>
+
+  </main>
+
+  <!-- NAVIGATION -->
+
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg">
+
+    <div class="grid grid-cols-5 text-center">
+
+      <a
+        href="../dashboard.html"
+        class="p-3 text-gray-500"
+      >
+
+        Home
+
+      </a>
+
+      <a
+        href="clients.html"
+        class="p-3 text-gray-500"
+      >
+
+        Clients
+
+      </a>
+
+      <a
+        href="projects.html"
+        class="p-3 text-gray-500"
+      >
+
+        Projects
+
+      </a>
+
+      <a
+        href="visits.html"
+        class="p-3 text-brand-primary font-bold"
+      >
+
+        Visits
+
+      </a>
+
+      <a
+        href="production-report.html"
+        class="p-3 text-gray-500"
+      >
+
+        Reports
+
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- SCRIPTS -->
+
+  <script src="../api.js"></script>
+
+  <script src="./visits.js"></script>
+
+</body>
+
+</html>

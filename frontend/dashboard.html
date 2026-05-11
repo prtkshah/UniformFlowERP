@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    UniformFlow ERP
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="./output.css"
+  >
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-white p-5 shadow-sm sticky top-0 z-40">
+
+    <div class="flex items-center justify-between">
+
+      <div>
+
+        <h1 class="text-2xl font-bold text-brand-primary">
+
+          UniformFlow ERP
+
+        </h1>
+
+        <p class="text-sm text-gray-500 mt-1">
+
+          Operational Dashboard
+
+        </p>
+
+      </div>
+
+      <div class="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-2xl">
+
+        🧵
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- DASHBOARD STATS -->
+
+    <div class="grid grid-cols-2 gap-4">
+
+      <!-- CLIENTS -->
+
+      <a
+        href="./pages/clients.html"
+        class="bg-white rounded-3xl p-5 shadow flex flex-col gap-3"
+      >
+
+        <div class="flex items-center justify-between">
+
+          <h2 class="font-bold text-lg">
+
+            Clients
+
+          </h2>
+
+          <div class="w-12 h-12 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary text-xl">
+
+            🏢
+
+          </div>
+
+        </div>
+
+        <p class="text-sm text-gray-500">
+
+          Manage Clients
+
+        </p>
+
+        <h3
+          id="clientCount"
+          class="text-3xl font-bold text-brand-primary"
+        >
+
+          0
+
+        </h3>
+
+      </a>
+
+      <!-- PROJECTS -->
+
+      <a
+        href="./pages/projects.html"
+        class="bg-white rounded-3xl p-5 shadow flex flex-col gap-3"
+      >
+
+        <div class="flex items-center justify-between">
+
+          <h2 class="font-bold text-lg">
+
+            Projects
+
+          </h2>
+
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-xl">
+
+            📁
+
+          </div>
+
+        </div>
+
+        <p class="text-sm text-gray-500">
+
+          Active Projects
+
+        </p>
+
+        <h3
+          id="projectCount"
+          class="text-3xl font-bold text-blue-600"
+        >
+
+          0
+
+        </h3>
+
+      </a>
+
+      <!-- VISITS -->
+
+      <a
+        href="./pages/visits.html"
+        class="bg-white rounded-3xl p-5 shadow flex flex-col gap-3"
+      >
+
+        <div class="flex items-center justify-between">
+
+          <h2 class="font-bold text-lg">
+
+            Visits
+
+          </h2>
+
+          <div class="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-xl">
+
+            📍
+
+          </div>
+
+        </div>
+
+        <p class="text-sm text-gray-500">
+
+          Measurement Sessions
+
+        </p>
+
+        <h3
+          id="visitCount"
+          class="text-3xl font-bold text-orange-600"
+        >
+
+          0
+
+        </h3>
+
+      </a>
+
+      <!-- MEASUREMENTS -->
+
+      <a
+        href="./pages/measurements.html"
+        class="bg-white rounded-3xl p-5 shadow flex flex-col gap-3"
+      >
+
+        <div class="flex items-center justify-between">
+
+          <h2 class="font-bold text-lg">
+
+            Measurements
+
+          </h2>
+
+          <div class="w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center text-xl">
+
+            📏
+
+          </div>
+
+        </div>
+
+        <p class="text-sm text-gray-500">
+
+          Total Entries
+
+        </p>
+
+        <h3
+          id="measurementCount"
+          class="text-3xl font-bold text-green-600"
+        >
+
+          0
+
+        </h3>
+
+      </a>
+
+    </div>
+
+    <!-- WORKFLOW SUMMARY -->
+
+    <div class="grid grid-cols-3 gap-4">
+
+      <div class="bg-white rounded-3xl p-4 shadow text-center">
+
+        <p class="text-sm text-gray-500">
+
+          Packed
+
+        </p>
+
+        <h2
+          id="packedCount"
+          class="text-2xl font-bold text-blue-600 mt-2"
+        >
+
+          0
+
+        </h2>
+
+      </div>
+
+      <div class="bg-white rounded-3xl p-4 shadow text-center">
+
+        <p class="text-sm text-gray-500">
+
+          Delivered
+
+        </p>
+
+        <h2
+          id="deliveredCount"
+          class="text-2xl font-bold text-green-600 mt-2"
+        >
+
+          0
+
+        </h2>
+
+      </div>
+
+      <div class="bg-white rounded-3xl p-4 shadow text-center">
+
+        <p class="text-sm text-gray-500">
+
+          Custom
+
+        </p>
+
+        <h2
+          id="customCount"
+          class="text-2xl font-bold text-red-600 mt-2"
+        >
+
+          0
+
+        </h2>
+
+      </div>
+
+    </div>
+
+    <!-- QUICK ACTIONS -->
+
+    <div class="bg-white rounded-3xl p-5 shadow space-y-4">
+
+      <div class="flex items-center justify-between">
+
+        <h2 class="text-lg font-bold">
+
+          Quick Actions
+
+        </h2>
+
+        <span class="text-sm text-gray-400">
+
+          Workflow
+
+        </span>
+
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+
+        <a
+          href="./pages/clients.html"
+          class="bg-brand-primary text-white py-4 rounded-2xl text-center font-semibold"
+        >
+
+          Add Client
+
+        </a>
+
+        <a
+          href="./pages/projects.html"
+          class="border border-brand-primary text-brand-primary py-4 rounded-2xl text-center font-semibold"
+        >
+
+          Create Project
+
+        </a>
+
+        <a
+          href="./pages/visits.html"
+          class="border border-brand-primary text-brand-primary py-4 rounded-2xl text-center font-semibold"
+        >
+
+          Create Visit
+
+        </a>
+
+        <a
+          href="./pages/production-report.html"
+          class="border border-brand-primary text-brand-primary py-4 rounded-2xl text-center font-semibold"
+        >
+
+          Reports
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg">
+
+    <div class="grid grid-cols-5 text-center">
+
+      <a
+        href="./dashboard.html"
+        class="p-3 text-brand-primary font-bold"
+      >
+
+        Home
+
+      </a>
+
+      <a
+        href="./pages/visits.html"
+        class="p-3 text-gray-500"
+      >
+
+        Visits
+
+      </a>
+
+      <a
+        href="./pages/measurements.html"
+        class="p-3 text-gray-500"
+      >
+
+        Measure
+
+      </a>
+
+      <a
+        href="./pages/packing.html"
+        class="p-3 text-gray-500"
+      >
+
+        Packing
+
+      </a>
+
+      <a
+        href="./pages/delivery.html"
+        class="p-3 text-gray-500"
+      >
+
+        Delivery
+
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- SCRIPTS -->
+
+  <script src="./api.js"></script>
+
+  <script src="./dashboard.js"></script>
+
+</body>
+
+</html>
+```

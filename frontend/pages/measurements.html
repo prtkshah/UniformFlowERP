@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Measurements
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-32">
+
+  <!-- HEADER -->
+
+  <header class="bg-black text-white p-4 sticky top-0 z-40 shadow">
+
+    <div class="flex items-center justify-between">
+
+      <div>
+
+        <h1 class="text-xl font-bold">
+          Measurement Entry
+        </h1>
+
+        <p class="text-sm text-gray-300">
+          Rapid Measurement Workflow
+        </p>
+
+      </div>
+
+      <button
+        onclick="changeSession()"
+        class="bg-white text-black px-3 py-2 rounded-xl text-sm font-semibold"
+      >
+
+        Change
+
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- NETWORK STATUS -->
+
+<div
+  id="networkStatus"
+  class="bg-green-500 text-white text-center py-2 text-sm font-semibold"
+>
+
+  ONLINE
+
+</div>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- ACTIVE SESSION -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <h2 class="font-bold text-lg">
+        Active Session
+      </h2>
+
+      <div
+        id="sessionInfo"
+        class="mt-3 text-sm text-gray-600"
+      >
+      </div>
+
+    </div>
+
+    <!-- SIZE PREVIEW -->
+
+    <div
+      id="sizePreview"
+      class="hidden bg-black text-white rounded-2xl p-4 shadow-lg"
+    >
+
+      <div class="flex items-center justify-between">
+
+        <div>
+
+          <p class="text-sm text-gray-300">
+
+            Predicted Size
+
+          </p>
+
+          <h2
+            id="liveSize"
+            class="text-4xl font-bold mt-1"
+          >
+            M
+          </h2>
+
+        </div>
+
+        <div
+          id="customBadge"
+          class="hidden"
+        >
+
+          <span class="bg-red-500 px-3 py-2 rounded-xl text-sm font-bold">
+
+            CUSTOM
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ENTRY FORM -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <div class="grid grid-cols-1 gap-3">
+
+        <!-- PERSON CODE -->
+
+        <input
+          type="text"
+          id="person_code"
+          placeholder="Person Code"
+          autocomplete="off"
+          class="w-full border rounded-2xl px-4 py-4 text-lg"
+        >
+
+        <!-- PERSON NAME -->
+
+        <input
+          type="text"
+          id="person_name"
+          placeholder="Person Name"
+          autocomplete="off"
+          class="w-full border rounded-2xl px-4 py-4 text-lg"
+        >
+
+        <!-- GENDER -->
+
+        <select
+          id="gender"
+          class="w-full border rounded-2xl px-4 py-4 text-lg"
+        >
+
+          <option value="Male">
+            Male
+          </option>
+
+          <option value="Female">
+            Female
+          </option>
+
+        </select>
+
+        <!-- CHEST -->
+
+        <div class="relative">
+
+          <input
+            type="number"
+            step="0.5"
+            id="chest"
+            placeholder="Chest"
+            class="w-full border rounded-2xl px-4 py-4 text-lg pr-10"
+          >
+
+          <span class="absolute right-4 top-4 text-lg text-gray-500">
+
+            "
+
+          </span>
+
+        </div>
+
+        <!-- TOP LENGTH -->
+
+        <div class="relative">
+
+          <input
+            type="number"
+            step="0.5"
+            id="top_length"
+            placeholder="Top Length"
+            class="w-full border rounded-2xl px-4 py-4 text-lg pr-10"
+          >
+
+          <span class="absolute right-4 top-4 text-lg text-gray-500">
+
+            "
+
+          </span>
+
+        </div>
+
+        <!-- WAIST -->
+
+        <div class="relative">
+
+          <input
+            type="number"
+            step="0.5"
+            id="waist"
+            placeholder="Waist"
+            class="w-full border rounded-2xl px-4 py-4 text-lg pr-10"
+          >
+
+          <span class="absolute right-4 top-4 text-lg text-gray-500">
+
+            "
+
+          </span>
+
+        </div>
+
+        <!-- BOTTOM LENGTH -->
+
+        <div class="relative">
+
+          <input
+            type="number"
+            step="0.5"
+            id="bottom_length"
+            placeholder="Bottom Length"
+            class="w-full border rounded-2xl px-4 py-4 text-lg pr-10"
+          >
+
+          <span class="absolute right-4 top-4 text-lg text-gray-500">
+
+            "
+
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<!-- SEARCH -->
+
+<div class="bg-white rounded-2xl p-4 shadow">
+
+  <input
+    type="text"
+    id="searchMeasurement"
+    placeholder="Search Name / Code"
+    onkeyup="loadMeasurements()"
+    class="w-full border rounded-2xl px-4 py-4"
+  >
+
+</div>
+    <!-- RECENT ENTRIES -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <div class="flex items-center justify-between mb-4">
+
+        <h2 class="font-bold text-lg">
+
+          Recent Entries
+
+        </h2>
+
+        <span
+          id="entryCount"
+          class="text-sm text-gray-500"
+        >
+          0 Entries
+        </span>
+
+      </div>
+
+      <div
+        id="measurementList"
+        class="space-y-3"
+      >
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- STICKY SAVE -->
+
+  <div class="fixed bottom-16 left-0 right-0 p-4 z-40">
+
+    <button
+      onclick="createMeasurement()"
+      class="w-full bg-black text-white py-4 rounded-2xl text-lg font-bold shadow-2xl active:scale-95 transition"
+    >
+
+      SAVE & NEXT
+
+    </button>
+
+  </div>
+
+  <!-- NAV -->
+
+  <div id="bottomNav"></div>
+
+  <!-- SCRIPTS -->
+
+  <script src="../api.js"></script>
+
+  <script src="../components/bottomnav.js"></script>
+
+  <script src="./measurements.js"></script>
+
+  <script>
+
+    document.getElementById(
+      'bottomNav'
+    ).innerHTML =
+      renderBottomNav('measurements');
+
+  </script>
+
+</body>
+
+</html>

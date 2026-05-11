@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Projects
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-black text-white p-4">
+
+    <h1 class="text-xl font-bold">
+      Projects
+    </h1>
+
+    <p class="text-sm text-gray-300">
+      Project Management
+    </p>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- PROJECT FORM -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <h2 class="font-bold text-lg mb-4">
+        Create Project
+      </h2>
+
+      <div class="space-y-3">
+
+        <select
+          id="client_id"
+          class="w-full border rounded-xl px-4 py-3"
+        >
+
+          <option value="">
+            Select Client
+          </option>
+
+        </select>
+
+        <input
+          type="text"
+          id="project_name"
+          placeholder="Project Name"
+          class="w-full border rounded-xl px-4 py-3"
+        >
+
+        <input
+          type="text"
+          id="project_type"
+          placeholder="Project Type"
+          class="w-full border rounded-xl px-4 py-3"
+        >
+
+        <input
+          type="text"
+          id="academic_year"
+          placeholder="Academic Year"
+          class="w-full border rounded-xl px-4 py-3"
+        >
+
+        <button
+          onclick="createProject()"
+          class="w-full bg-black text-white py-3 rounded-xl font-semibold"
+        >
+
+          Save Project
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECT LIST -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <h2 class="font-bold text-lg mb-4">
+        Project List
+      </h2>
+
+      <div
+        id="projectList"
+        class="space-y-3"
+      >
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- NAV -->
+
+  <div id="bottomNav"></div>
+
+  <!-- SCRIPTS -->
+
+  <script src="../api.js"></script>
+
+  <script src="../components/bottomnav.js"></script>
+
+  <script src="./projects.js"></script>
+
+  <script>
+
+    document.getElementById(
+      'bottomNav'
+    ).innerHTML =
+      renderBottomNav('projects');
+
+  </script>
+
+</body>
+
+</html>

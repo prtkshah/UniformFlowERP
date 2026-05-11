@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Production Report
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-white p-4 shadow flex justify-between items-center">
+
+    <div>
+
+      <h1 class="text-2xl font-bold text-brand-primary">
+
+        Production Report
+
+      </h1>
+
+      <p class="text-sm text-gray-500 mt-1">
+
+        Size Summary & Production Overview
+
+      </p>
+
+    </div>
+
+    <div class="flex gap-2">
+
+      <button
+        onclick="exportCSV()"
+        class="border border-brand-primary text-brand-primary px-4 py-2 rounded-xl font-semibold"
+      >
+
+        EXPORT CSV
+
+      </button>
+
+      <button
+        onclick="window.print()"
+        class="bg-brand-primary text-white px-4 py-2 rounded-xl font-semibold"
+      >
+
+        PRINT
+
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- SESSION -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <select
+        id="visitFilter"
+        onchange="loadReport()"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+        <option value="">
+
+          Select Session
+
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- SUMMARY -->
+
+    <div
+      id="summaryCards"
+      class="grid grid-cols-2 gap-4"
+    >
+    </div>
+
+    <!-- SIZE REPORT -->
+
+    <div class="bg-white rounded-2xl shadow overflow-hidden">
+
+      <div class="p-4 border-b">
+
+        <h2 class="font-bold text-lg">
+
+          Size Distribution
+
+        </h2>
+
+      </div>
+
+      <div id="sizeTable">
+
+      </div>
+
+    </div>
+
+    <!-- CUSTOM -->
+
+    <div class="bg-white rounded-2xl shadow overflow-hidden">
+
+      <div class="p-4 border-b">
+
+        <h2 class="font-bold text-lg">
+
+          Custom Size Queue
+
+        </h2>
+
+      </div>
+
+      <div
+        id="customQueue"
+        class="divide-y"
+      >
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- NAV -->
+
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg print:hidden">
+
+    <div class="grid grid-cols-5 text-center">
+
+      <a
+        href="../dashboard.html"
+        class="p-3 text-gray-500"
+      >
+
+        Home
+
+      </a>
+
+      <a
+        href="production.html"
+        class="p-3 text-gray-500"
+      >
+
+        Production
+
+      </a>
+
+      <a
+        href="packing.html"
+        class="p-3 text-gray-500"
+      >
+
+        Packing
+
+      </a>
+
+      <a
+        href="delivery.html"
+        class="p-3 text-gray-500"
+      >
+
+        Delivery
+
+      </a>
+
+      <a
+        href="production-report.html"
+        class="p-3 text-brand-primary font-bold"
+      >
+
+        Report
+
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- SCRIPTS -->
+
+  <script src="../api.js"></script>
+
+  <script src="./production-report.js"></script>
+
+</body>
+
+</html>

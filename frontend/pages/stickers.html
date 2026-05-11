@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Sticker Generator
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-black text-white p-4">
+
+    <h1 class="text-xl font-bold">
+      Sticker Generator
+    </h1>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- CONTROLS -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <div class="space-y-3">
+
+        <select
+          id="template"
+          class="w-full border rounded-2xl px-4 py-4"
+        >
+
+          <option value="2x4">
+
+            NovaJet 2x4
+
+          </option>
+
+          <option value="3x6">
+
+            NovaJet 3x6
+
+          </option>
+
+        </select>
+
+        <button
+          onclick="generateStickers()"
+          class="w-full bg-black text-white py-4 rounded-2xl font-bold"
+        >
+
+          GENERATE STICKERS
+
+        </button>
+
+        <button
+          onclick="window.print()"
+          class="w-full border border-black py-4 rounded-2xl font-bold"
+        >
+
+          PRINT
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- STICKERS -->
+
+    <div
+      id="stickerContainer"
+      class="grid grid-cols-2 gap-3"
+    >
+    </div>
+
+  </main>
+
+  <script src="../api.js"></script>
+
+  <script src="./stickers.js"></script>
+
+</body>
+
+</html>

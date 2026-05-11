@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Clients
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-white p-4 shadow">
+
+    <h1 class="text-2xl font-bold text-brand-primary">
+
+      Clients
+
+    </h1>
+
+    <p class="text-sm text-gray-500 mt-1">
+
+      Client Management
+
+    </p>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- FORM -->
+
+    <div class="bg-white rounded-2xl p-4 shadow space-y-4">
+
+      <input
+        type="text"
+        id="client_name"
+        placeholder="Client Name"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <select
+        id="client_type"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+        <option value="School">
+
+          School
+
+        </option>
+
+        <option value="Hospital">
+
+          Hospital
+
+        </option>
+
+        <option value="Industry">
+
+          Industry
+
+        </option>
+
+        <option value="Corporate">
+
+          Corporate
+
+        </option>
+
+      </select>
+
+      <input
+        type="text"
+        id="contact_person"
+        placeholder="Contact Person"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <input
+        type="text"
+        id="phone"
+        placeholder="Phone"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+      <textarea
+        id="address"
+        placeholder="Address"
+        class="w-full border rounded-2xl px-4 py-4"
+      ></textarea>
+
+      <button
+        onclick="createClient()"
+        class="w-full bg-brand-primary text-white py-4 rounded-2xl font-bold"
+      >
+
+        SAVE CLIENT
+
+      </button>
+
+    </div>
+
+    <!-- LIST -->
+
+    <div
+      id="clientList"
+      class="space-y-4"
+    >
+    </div>
+
+  </main>
+
+  <!-- NAV -->
+
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg">
+
+    <div class="grid grid-cols-5 text-center">
+
+      <a
+        href="../dashboard.html"
+        class="p-3 text-gray-500"
+      >
+
+        Home
+
+      </a>
+
+      <a
+        href="clients.html"
+        class="p-3 text-brand-primary font-bold"
+      >
+
+        Clients
+
+      </a>
+
+      <a
+        href="projects.html"
+        class="p-3 text-gray-500"
+      >
+
+        Projects
+
+      </a>
+
+      <a
+        href="visits.html"
+        class="p-3 text-gray-500"
+      >
+
+        Visits
+
+      </a>
+
+      <a
+        href="production-report.html"
+        class="p-3 text-gray-500"
+      >
+
+        Reports
+
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- SCRIPTS -->
+
+  <script src="../api.js"></script>
+
+  <script src="./clients.js"></script>
+
+</body>
+
+</html>

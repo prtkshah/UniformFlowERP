@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>UniformFlow ERP</title>
+
+  <link rel="stylesheet" href="./output.css">
+
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm p-6">
+
+    <div class="mb-6 text-center">
+
+      <h1 class="text-3xl font-bold">
+        UniformFlow ERP
+      </h1>
+
+      <p class="text-gray-500 mt-2">
+        Operational Management System
+      </p>
+
+    </div>
+
+    <div class="space-y-4">
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter Email"
+        class="w-full border rounded-xl px-4 py-3"
+      >
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter Password"
+        class="w-full border rounded-xl px-4 py-3"
+      >
+
+      <button
+        onclick="login()"
+        class="w-full bg-black text-white py-3 rounded-xl font-semibold"
+      >
+        Login
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="./api.js"></script>
+  <script src="./auth.js"></script>
+
+</body>
+
+</html>

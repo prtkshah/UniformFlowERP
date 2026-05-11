@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    QR Delivery Scanner
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+  <script src="https://unpkg.com/html5-qrcode"></script>
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-white p-4 shadow">
+
+    <h1 class="text-2xl font-bold text-brand-primary">
+
+      QR Delivery Scanner
+
+    </h1>
+
+    <p class="text-sm text-gray-500 mt-1">
+
+      Scan & Deliver Workflow
+
+    </p>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- CAMERA -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <div
+        id="reader"
+        class="rounded-2xl overflow-hidden"
+      >
+      </div>
+
+    </div>
+
+    <!-- RESULT -->
+
+    <div
+      id="scanResult"
+      class="space-y-4"
+    >
+    </div>
+
+  </main>
+
+  <!-- NAV -->
+
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg">
+
+    <div class="grid grid-cols-5 text-center">
+
+      <a
+        href="../dashboard.html"
+        class="p-3 text-gray-500"
+      >
+
+        Home
+
+      </a>
+
+      <a
+        href="packing.html"
+        class="p-3 text-gray-500"
+      >
+
+        Packing
+
+      </a>
+
+      <a
+        href="scan-packing.html"
+        class="p-3 text-gray-500"
+      >
+
+        Pack Scan
+
+      </a>
+
+      <a
+        href="scan-delivery.html"
+        class="p-3 text-brand-primary font-bold"
+      >
+
+        Deliver Scan
+
+      </a>
+
+      <a
+        href="delivery.html"
+        class="p-3 text-gray-500"
+      >
+
+        Delivery
+
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- SCRIPTS -->
+
+  <script src="../api.js"></script>
+
+  <script src="./scan-delivery.js"></script>
+
+</body>
+
+</html>

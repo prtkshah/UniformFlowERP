@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Packing Workflow
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="../output.css"
+  >
+
+</head>
+
+<body class="bg-gray-100 min-h-screen pb-24">
+
+  <!-- HEADER -->
+
+  <header class="bg-white p-4 shadow">
+
+    <h1 class="text-2xl font-bold text-brand-primary">
+
+      Packing Workflow
+
+    </h1>
+
+    <p class="text-sm text-gray-500 mt-1">
+
+      Packing Verification System
+
+    </p>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="p-4 space-y-4">
+
+    <!-- SESSION SELECT -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <select
+        id="visitFilter"
+        onchange="loadPackingData()"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+        <option value="">
+
+          Select Session
+
+        </option>
+
+      </select>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="bg-white rounded-2xl p-4 shadow">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Name / Code"
+        onkeyup="loadPackingData()"
+        class="w-full border rounded-2xl px-4 py-4"
+      >
+
+    </div>
+
+    <!-- PACKING LIST -->
+
+    <div
+      id="packingList"
+      class="space-y-4"
+    >
+    </div>
+
+  </main>
+
+  <!-- NAV -->
+
+  <nav class="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg">
+
+    <div class="grid grid-cols-5 text-center">
+
+      <a
+        href="../dashboard.html"
+        class="p-3 text-gray-500"
+      >
+
+        Home
+
+      </a>
+
+      <a
+        href="measurements.html"
+        class="p-3 text-gray-500"
+      >
+
+        Measure
+
+      </a>
+
+      <a
+        href="production.html"
+        class="p-3 text-gray-500"
+      >
+
+        Production
+
+      </a>
+
+      <a
+        href="packing.html"
+        class="p-3 text-brand-primary font-bold"
+      >
+
+        Packing
+
+      </a>
+
+      <a
+        href="delivery.html"
+        class="p-3 text-gray-500"
+      >
+
+        Delivery
+
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- SCRIPTS -->
+
+  <script src="../api.js"></script>
+
+  <script src="./packing.js"></script>
+
+</body>
+
+</html>
